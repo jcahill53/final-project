@@ -1,38 +1,144 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+header {
+  background: linear-gradient(to left, darkgreen, rgb(156, 206, 230));
+  color: white;
+  background-image: url("../images/marvelBanner4.jpg");
+  background-size: cover;
   text-align: center;
+  height: 200px;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between; */
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+  background-color: black;
+  color: white;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+footer {
+  background-color: black;
+  color: white;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 1%;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hdr-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  width: 50%;
+
+
+}
+
+label {
+  font-weight: bold;
+}
+
+#hero-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  width: 40%;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: .25rem;
+
+}
+
+
+
+.submit-btn {
+  background-color: #FF5216;
+  color: black;
+  font-weight: bold;
+  padding: 1rem, 3rem;
+  width: 25%;
+  height: 2rem;
+}
+
+body {
+  background-color: darkgray
+
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #FF9E7C;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+
+h2 {
+  text-align: center;
+  color: black;
+}
+
+#powImage {
+  /* width: 20%;
+  height: 20%; */
+  margin-top: 20px;
+
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#hero-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.hero-card {
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: flex-start;
+  margin: .75rem;
+  background-color: #FF9E7C;
+  padding: 1.5rem;
+  border: 3px ridge #FF5216;
+  border-radius: 5px;
+
+
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero-image {
+  width: 350px;
+  height: 450px;
+  object-fit: contain;
 }
