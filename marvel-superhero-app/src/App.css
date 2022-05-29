@@ -53,6 +53,10 @@ footer {
 
 }
 
+body {
+  background-color: lightgray;
+}
+
 .hdr-left {
   display: flex;
   flex-direction: row;
@@ -125,6 +129,7 @@ h2 {
 .hero-container {
   width: 20%;
   margin: 1rem;
+
   
 }
 
@@ -135,6 +140,7 @@ h2 {
   border-radius: 5px;
   border: .15rem solid black;
   min-height: 25rem;
+  background-color: white;
 }
 
 .hero-image {
