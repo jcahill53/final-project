@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import SuperherosCard from './SuperherosCard';
+import SuperherosCard from './SuperheroCard';
 // import { Link } from 'react-router-dom';
 
 function SuperheroApp() {
@@ -53,7 +53,7 @@ function SuperheroApp() {
     // const thumbExt = heros[id].thumbnail['extension']
     // const heroThumbnail = `${thumbPath}.${thumbExt}`
 
-    // console.log(superheros);
+    console.log(superheros);
 
     // console.log(heroThumbnail);
 

@@ -29,9 +29,8 @@ function App() {
       <>
         <NavBar />
         <div detail-info>
-          <h1>Superhero Details</h1>
           <ul>
-            <li className="link" ><Link to="/">Return Home</Link></li>
+            <li  ><Link to="/">Return Home</Link></li>
           </ul>
           <SuperheroDetail
             id={id}

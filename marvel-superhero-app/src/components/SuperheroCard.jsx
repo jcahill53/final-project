@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-function SuperherosCard({ hero, thumbPath, thumbExt }) {
+function SuperheroCard({ hero, thumbPath, thumbExt }) {
     const thumbNail = `${thumbPath}.${thumbExt}`
 
     return (
@@ -17,4 +17,4 @@ function SuperherosCard({ hero, thumbPath, thumbExt }) {
     )
 }
 
-export default SuperherosCard
+export default SuperheroCard
