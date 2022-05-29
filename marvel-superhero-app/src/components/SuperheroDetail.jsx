@@ -14,9 +14,7 @@ function SuperheroDetail() {
     const hash = REACT_APP_HASH
     const charID = id;
     const url = `${BASE_URL}${resourceType}${charID}?&ts=1&apikey=${API_KEY}&hash=${hash}`;
-    // https://gateway.marvel.com:443/v1/public/characters/1011054?&ts=1&apikey=192c597a69f5e5f60181fcd4569e8f79
 
-    // console.log(url);
 
     useEffect(() => {
         fetch(url)
@@ -47,21 +45,30 @@ function SuperheroDetail() {
         return <p>An error has occurred.  Please try again.</p>
     }
 
-    console.log(superHeroDetails);
     const heroDetails = superHeroDetails.data.results;
-    // console.log(heroDetails);
-//    const heroName = heroDetails[0].name
+    const heroThumbPath = heroDetails[0].thumbnail.path;
+    const heroThumbExt = heroDetails[0].thumbnail.extension
+    const heroThumbNail = `${heroThumbPath}.${heroThumbExt}`
+    // const heroDescr = () => {
+    //     if (heroDetails[0].description === "")   {
 
-   const heroThumbPath = heroDetails[0].thumbnail.path;
-   const heroThumbExt = heroDetails[0].thumbnail.extension
-   const heroThumbNail = `${heroThumbPath}.${heroThumbExt}`
-const heroDescr = heroDetails[0].desc
+    //         console.log("No additional information is available.") 
+    //     }
+    //     else {
+    //         console.log(heroDetails[0].description)
+    //     }
+    // }
+
+    const heroDescr = heroDetails[0].description
+
+    // console.log(heroDetails[0].description);
+
     return (
         <>
-             
+
             <h1 className="detail-hdr">{heroDetails[0].name}</h1>
-            <img className="center detail-image" src={heroThumbNail} alt = {heroDetails[0].name}/>
-            <p className="center detail-descr"><span>Description:  </span>{heroDescr}</p>
+            <img className="center detail-image" src={heroThumbNail} alt={heroDetails[0].name} />
+            <p className="center detail-descr"> {heroDescr}</p>
         </>
     )
 }

@@ -4,6 +4,7 @@ import './App.css';
 import SuperheroApp from './components/SuperheroApp';
 import SuperheroDetail from './components/SuperheroDetail';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import { Route, Routes, Link, useParams } from 'react-router-dom';
 
 // const { REACT_APP_API, REACH_APP_HASH } = process.env
@@ -19,6 +20,7 @@ function App() {
           <SuperheroApp
           />
         </div>
+        <Footer/>
       </>
     )
   };
@@ -36,6 +38,7 @@ function App() {
             id={id}
           />
         </div>
+        <Footer/>
       </>
     );
   }
