@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import SuperherosCard from './SuperherosCard';
+// import { Link } from 'react-router-dom';
 
 function SuperheroApp() {
 
@@ -47,24 +48,27 @@ function SuperheroApp() {
         return <p>An error has occurred.  Please try again.</p>
     }
     const heros = superheros.data.results;
-    
-console.log(superheros);
-console.log(heros);
+
+    // const thumbPath = heros[id].thumbnail['path']
+    // const thumbExt = heros[id].thumbnail['extension']
+    // const heroThumbnail = `${thumbPath}.${thumbExt}`
+
+    // console.log(superheros);
+
+    // console.log(heroThumbnail);
+
 
     return (
         <main>
-            <div className="column list-items">
+            <div className="row" >
                 {heros.map((hero, id) =>
-                    <section  >
-
-                        <div className="row border" key={id}>
-                            <div className="info row">
-                                {/* <img src={animal.icon_uri} alt={animal.name} /> */}
-                                <h2><span>Name: </span>{hero.name["name-USen"]} - <span>id: </span> {hero.id}</h2>
-                            </div>
-                            <Link to={`/hero/${hero.id}`}><button >More Info</button></Link>
-                        </div>
-                    </section>
+                     <SuperherosCard 
+                         key = {id}
+                         hero = {hero}
+                         thumbPath = {hero.thumbnail.path}
+                         thumbExt = {hero.thumbnail.extension}
+                        
+                     />
                 )}
             </div>
 

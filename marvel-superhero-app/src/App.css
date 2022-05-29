@@ -6,6 +6,22 @@
   font-size: 100%;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* align-content: center; */
+  flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
 header {
   background: linear-gradient(to left, darkgreen, rgb(156, 206, 230));
   color: white;
@@ -13,9 +29,6 @@ header {
   background-size: cover;
   text-align: center;
   height: 200px;
-  /* display: flex;
-  flex-direction: row;
-  justify-content: space-between; */
   width: 100%;
 }
 
@@ -54,7 +67,7 @@ label {
   font-weight: bold;
 }
 
-#hero-form {
+.hero-form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -82,15 +95,11 @@ label {
   height: 2rem;
 }
 
-body {
-  background-color: darkgray
-
-}
 
 h1 {
   font-size: 2.5rem;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #FF9E7C;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #FF5216;
   padding-top: 1rem;
   padding-left: 1rem;
 }
@@ -98,11 +107,10 @@ h1 {
 h2 {
   text-align: center;
   color: black;
+  font-size: 1.5rem;
 }
 
-#powImage {
-  /* width: 20%;
-  height: 20%; */
+.powImage {
   margin-top: 20px;
 
 }
@@ -114,31 +122,39 @@ h2 {
   width: 50%;
 }
 
-#hero-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+.hero-container {
+  width: 20%;
+  margin: 1rem;
+  
 }
 
 .hero-card {
-  width: 30%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-content: flex-start;
-  margin: .75rem;
-  background-color: #FF9E7C;
+  width: 100%;
+  margin: 1rem;
   padding: 1.5rem;
-  border: 3px ridge #FF5216;
   border-radius: 5px;
-
-
+  border: .15rem solid black;
+  min-height: 25rem;
 }
 
 .hero-image {
-  width: 350px;
-  height: 450px;
-  object-fit: contain;
+  max-height: 20rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.info-btn {
+  background-color: #FF5216;
+  color: black;
+  font-weight: bold;
+  padding: 1rem, 3rem;
+  width: 75%;
+  height: 2rem;
+  color: white;
+  margin-top: 1rem;
+}
+
+a {
+  text-decoration: none;
+
 }

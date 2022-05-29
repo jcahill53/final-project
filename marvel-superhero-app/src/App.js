@@ -16,11 +16,7 @@ function App() {
       <>
         <NavBar />
         <div className="container ">
-
-          <h1>Super Heros</h1>
-
           <SuperheroApp
-
           />
         </div>
       </>

@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../images/marvel2.png';
 
 
 function NavBar() {
@@ -12,7 +13,7 @@ function NavBar() {
 
             <nav>
                 <section className="hdr-left">
-                    <img className="logo" src="../images/marvel2.png" alt="Marvel logo" />
+                    <img className="logo" src={logo} alt="Marvel logo" />
                     <h1>Superhero Search</h1>
                 </section>
                 {/* end of hdr-left */}
