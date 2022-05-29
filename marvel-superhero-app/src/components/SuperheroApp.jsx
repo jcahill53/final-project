@@ -13,7 +13,7 @@ function SuperheroApp() {
     const resourceType = `v1/public/characters`
     const API_KEY = REACT_APP_API;
     const hash = REACT_APP_HASH
-    let nameStartsWith = 'Thor';
+    let nameStartsWith = 'Spider';
     const orderBy = 'name';
     const limit = 50;
     const url = `${BASE_URL}${resourceType}?nameStartsWith=${nameStartsWith}&orderBy=${orderBy}&limit=${limit}&ts=1&apikey=${API_KEY}&hash=${hash}`;

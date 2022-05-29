@@ -25,7 +25,7 @@
 header {
   background: linear-gradient(to left, darkgreen, rgb(156, 206, 230));
   color: white;
-  background-image: url("./images/marvelBanner4.jpg");
+  background-image: url("./images/banner.jpg");
   background-size: cover;
   text-align: center;
   height: 200px;
@@ -130,15 +130,15 @@ h2 {
 
 .hero-card {
   width: 100%;
-  margin: 1rem;
-  padding: 1.5rem;
+  margin: .5rem;
+  padding: 1rem;
   border-radius: 5px;
   border: .15rem solid black;
   min-height: 25rem;
 }
 
 .hero-image {
-  max-height: 20rem;
+  max-height: 15rem;
   width: 100%;
   margin-bottom: 1rem;
 }
