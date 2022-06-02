@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import SuperheroApp from './components/SuperheroApp';
 import SuperheroDetail from './components/SuperheroDetail';
@@ -9,18 +9,48 @@ import { Route, Routes, Link, useParams } from 'react-router-dom';
 
 // const { REACT_APP_API, REACH_APP_HASH } = process.env
 
+
+
+
 function App() {
+  // use state for form submission of hero name
+  const [heroInput, setHeroInput] = useState('');
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    setHeroInput(event.target[0].value);
+  };
 
   const Home = () => {
 
+
     return (
       <>
+
         <NavBar />
+        {/* Hero name input */}
+        <form onSubmit={onFormSubmit}>
+          <label htmlFor="hero-input">Hero:</label>
+          <input id="hero-input"></input>
+          <button type="submit" className="submit-btn">Search</button>
+        </form>
+        {/* favorite default */}
+        {/* <div className="row">
+                <p>Save as default?</p>
+                <form className='radio'>
+                    <input type="radio" id="favorite" name="fav_hero" value="Yes" />
+                    <label htmlFor="favorite">Yes</label>
+                    <input type="radio" id="notFavorite" name="fav_hero" value="No" checked />
+                    <label htmlFor="notFavorite">Clear default</label>
+                </form>
+            </div> */}
+
+
         <div className="container ">
-          <SuperheroApp
-          />
+          {heroInput && <SuperheroApp
+            heroInput={heroInput}
+          />}
         </div>
-        <Footer/>
+        <Footer />
       </>
     )
   };
@@ -38,10 +68,12 @@ function App() {
             id={id}
           />
         </div>
-        <Footer/>
+
+        <Footer />
       </>
     );
   }
+
 
 
   return (
@@ -53,6 +85,8 @@ function App() {
           element={<SuperHeroDetailPage />}
         />
       </Routes>
+
+
     </div>
   );
 }
