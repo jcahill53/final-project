@@ -1,0 +1,13 @@
+http://gateway.marvel.com/v1/public/characters/1009351/series?&ts=1&apikey=192c597a69f5e5f60181fcd4569e8f79&hash=07dced18d8feafe4974a0029ce3e1003
+
+1009351
+
+http://gateway.marvel.com/v1/public/characters/1009351/comics?&ts=1&apikey=192c597a69f5e5f60181fcd4569e8f79&hash=07dced18d8feafe4974a0029ce3e1003
+
+http://gateway.marvel.com/v1/public/characters/1009351/comics?&ts=1&apikey=192c597a69f5e5f60181fcd4569e8f79&hash=07dced18d8feafe4974a0029ce3e1003
+http://i.annihil.us/u/prod/marvel/i/mg/b/d0/4badb223f33c9
+
+http://gateway.marvel.com/v1/public/stories/885?&ts=1&apikey=192c597a69f5e5f60181fcd4569e8f79&hash=07dced18d8feafe4974a0029ce3e1003
+
+
+https://gateway.marvel.com:443/v1/public/comics?noVariants=true&characters=1009351&orderBy=issueNumber&ts=1&apikey=192c597a69f5e5f60181fcd4569e8f79&hash=07dced18d8feafe4974a0029ce3e1003

@@ -7,10 +7,6 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import { Route, Routes, Link, useParams } from 'react-router-dom';
 
-// const { REACT_APP_API, REACH_APP_HASH } = process.env
-
-
-
 
 function App() {
   // use state for form submission of hero name
@@ -22,10 +18,8 @@ function App() {
 
   const Home = () => {
 
-
     return (
       <>
-
         <NavBar />
         {/* Hero name input */}
         <form onSubmit={onFormSubmit}>
@@ -43,7 +37,6 @@ function App() {
                     <label htmlFor="notFavorite">Clear default</label>
                 </form>
             </div> */}
-
 
         <div className="container ">
           {heroInput && <SuperheroApp
@@ -68,13 +61,10 @@ function App() {
             id={id}
           />
         </div>
-
         <Footer />
       </>
     );
   }
-
-
 
   return (
     <div className="App">
@@ -85,8 +75,6 @@ function App() {
           element={<SuperHeroDetailPage />}
         />
       </Routes>
-
-
     </div>
   );
 }

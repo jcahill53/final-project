@@ -1,20 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import SuperherosCard from './SuperheroCard';
-// import PropTypes from 'prop-types;'
+import PropTypes from 'prop-types'
 
 function SuperheroApp({heroInput}) {
-
-
-
 
     // use states for hero card
     const [superheros, setSuperheros] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
-    // const { heroSearch } = useParams();
-
-    console.log(heroInput);
     // variables to create url
     const { REACT_APP_API, REACT_APP_HASH } = process.env
     const BASE_URL = `https://gateway.marvel.com:443/`;
@@ -25,13 +19,11 @@ function SuperheroApp({heroInput}) {
     const orderBy = 'name';
     const limit = 50;
     const url = `${BASE_URL}${resourceType}?nameStartsWith=${nameStartsWith}&orderBy=${orderBy}&limit=${limit}&ts=1&apikey=${API_KEY}&hash=${hash}`;
-    console.log(url);
+
 
     useEffect(() => {
         fetch(url)
-
             .then(response => response.json())
-
             .then(
                 // successful callback
                 data => {
@@ -42,7 +34,6 @@ function SuperheroApp({heroInput}) {
                 error => {
                     setHasError(true)
                     setIsLoading(false);
-
                 }
             );
 
@@ -58,17 +49,9 @@ function SuperheroApp({heroInput}) {
     }
     const heros = superheros.data.results;
 
-    // 
-    console.log(heros);
-
-
-
 
     return (
-        <main>
- 
-
-
+        <>
             {/* superherp cards */}
 
             <div className="row" >
@@ -83,12 +66,12 @@ function SuperheroApp({heroInput}) {
                 )}
             </div>
 
-        </main>
+        </>
     );
 }
 
-// SuperheroApp.propTypes={
-//     heroSearch: PropTypes.string.isRequired
-// }
+SuperheroApp.propTypes = {
+    heroSearch: PropTypes.string.isRequired
+}
 
 export default SuperheroApp
