@@ -67,6 +67,7 @@ function SuperheroApp({ heroInput }) {
                         hero={hero}
                         thumbPath={hero.thumbnail.path}
                         thumbExt={hero.thumbnail.extension}
+                       
                     />
                 )}
             </section>

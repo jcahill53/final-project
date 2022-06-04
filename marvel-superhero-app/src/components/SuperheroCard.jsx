@@ -20,7 +20,7 @@ function SuperheroCard({ hero, thumbPath, thumbExt }) {
 }
 
 SuperheroCard.propTypes = {
-    hero: PropTypes.array.isRequired,
+    hero: PropTypes.object.isRequired,
     thumbPath: PropTypes.string.isRequired,
     thumbExt: PropTypes.string.isRequired
 }

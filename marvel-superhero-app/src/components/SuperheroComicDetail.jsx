@@ -6,7 +6,6 @@ import pow from '../images/Pow.jpg'
 function SuperheroComicDetail() {
     const { id } = useParams();
 
-    console.log(id);
 
     const [superHeroComicDetail, setHeroComicDetail] = useState([]);
     const [isLoading, setIsLoading] = useState(true);

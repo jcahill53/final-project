@@ -26,7 +26,7 @@ function App() {
           {/* Hero name input */}
           <form className="hero-form" onSubmit={onFormSubmit}>
             <label htmlFor="hero-input">Enter a Hero:</label>
-            <input id="hero-input" type="text" onfocus="this.value=''" placeholder="Enter at least 1 character" required pattern="[a-zA-Z\-\s]+" minlength="1"
+            <input id="hero-input" type="text"  placeholder="Enter at least 1 character" required pattern="[a-zA-Z\-\s]+" minLength="1"
               title="Enter at least one character. Use only upper case, lower case, a space or hyphens"></input>
             <button type="submit" className="submit-btn">Search</button>
           </form>
@@ -48,7 +48,7 @@ function App() {
       <>
         <NavBar />
         <main>
-          <div detail-info>
+          <div >
             <SuperheroDetail
               id={id}
             />
@@ -65,7 +65,7 @@ function App() {
       <>
         <NavBar />
         <main>
-        <div detail-info>
+        <div >
           <SuperheroComicDetail
             id={id}
           />
