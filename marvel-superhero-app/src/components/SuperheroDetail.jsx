@@ -49,14 +49,11 @@ function SuperheroDetail() {
                     setIsLoading(false);
                 })
 
-            )
-        // .then(
-        //     error => {
-        //         setHasError(true)
-        //         setIsLoading(false);
+            ).catch(err => {
+                setHasError(true)
+                setIsLoading(false);
+            });
 
-        //     }
-        // );
 
     }
         fetchData()
