@@ -1,0 +1,20 @@
+    useEffect(() => {
+        fetch(url)
+
+            .then(response => response.json())
+
+            .then(
+                data => {
+                    setHeroDetails(data);
+                    setIsLoading(false);
+                },
+
+                error => {
+                    setHasError(true)
+                    setIsLoading(false);
+
+                }
+            );
+
+
+    }, [url]);

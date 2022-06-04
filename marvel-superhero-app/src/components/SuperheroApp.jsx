@@ -48,6 +48,7 @@ function SuperheroApp({heroInput}) {
         return <p>An error has occurred.  Please try again.</p>
     }
     const heros = superheros.data.results;
+    console.log(heros);
 
 
     return (
@@ -71,7 +72,7 @@ function SuperheroApp({heroInput}) {
 }
 
 SuperheroApp.propTypes = {
-    heroSearch: PropTypes.string.isRequired
+    heroInput: PropTypes.string.isRequired
 }
 
 export default SuperheroApp

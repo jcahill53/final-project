@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../images/marvel2.png';
-
+import { Link  } from 'react-router-dom';
 
 function NavBar() {
 
@@ -17,7 +17,11 @@ function NavBar() {
                     <h1>Superhero Search</h1>
                 </section>
                 {/* end of hdr-left */}
-
+                <section className="hdr-right">
+                <ul className="nav-links">
+                    <li  ><Link to="/">Return to Home</Link></li>
+                </ul>
+                </section>
             </nav>
 
         </>

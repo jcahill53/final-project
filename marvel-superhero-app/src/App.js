@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 import './App.css';
 import SuperheroApp from './components/SuperheroApp';
 import SuperheroDetail from './components/SuperheroDetail';
+import SuperheroComicDetail from './components/SuperheroComicDetail'
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import { Route, Routes, Link, useParams } from 'react-router-dom';
+import { Route, Routes, useParams } from 'react-router-dom';
 
 
 function App() {
@@ -54,10 +55,23 @@ function App() {
       <>
         <NavBar />
         <div detail-info>
-          <ul>
-            <li  ><Link to="/">Return Home</Link></li>
-          </ul>
+
           <SuperheroDetail
+            id={id}
+          />
+        </div>
+        <Footer />
+      </>
+    );
+  }
+
+  const SuperHeroComicsDetailPage = () => {
+    const { id } = useParams();
+    return (
+      <>
+        <NavBar />
+        <div detail-info>
+           <SuperheroComicDetail
             id={id}
           />
         </div>
@@ -73,6 +87,10 @@ function App() {
         <Route
           path="/hero/:id"
           element={<SuperHeroDetailPage />}
+        />
+        <Route
+          path="/comic/:id"
+          element={<SuperHeroComicsDetailPage />}
         />
       </Routes>
     </div>

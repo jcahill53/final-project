@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import PropTypes from 'prop-types'
 
 function SuperheroCard({ hero, thumbPath, thumbExt }) {
     const thumbNail = `${thumbPath}.${thumbExt}`
@@ -17,6 +17,12 @@ function SuperheroCard({ hero, thumbPath, thumbExt }) {
 
 
     )
+}
+
+SuperheroCard.propTypes = {
+    hero: PropTypes.array.isRequired,
+    thumbPath: PropTypes.string.isRequired,
+    thumbExt: PropTypes.string.isRequired
 }
 
 export default SuperheroCard
