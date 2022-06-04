@@ -62,15 +62,16 @@ function SuperheroComicDetail() {
 
     return (
         <>
-            {/* superherp cards */}
+            {/* comic details */}
 
-            <div   >
+            <div className="comic-detail-card" >
 
-                <img src={comicDetThumbNail} alt="Comic cover page" />
-                <h3>{comic[0].title} - {comic[0].id}</h3>
-                <p><span>Published Date:</span> {formattedDate}</p>
-                <p>{comic[0].description}</p>
-
+                <img className="comic-detail-image center" src={comicDetThumbNail} alt="Comic cover page" />
+                <div className="comic-detail-info">
+                    <h3 className="comic-detail-hdr">{comic[0].title} - {comic[0].id}</h3>
+                    <p className="comic-detail-descr"><span>Published Date:</span> {formattedDate}</p>
+                    <p className="comic-detail-descr">{comic[0].description}</p>
+                </div>
 
             </div>
 

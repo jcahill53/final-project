@@ -6,14 +6,11 @@ function SuperheroComic({ comic, comicThumbPath, comicThumbExt }) {
     const comicThumbNail = `${comicThumbPath}.${comicThumbExt}`
 
     return (
-     
-            <article className="comic-container">
-                <div className="comic-card" key="id">
+        <Link to={`/comic/${comic.id}`}>
+            <article className="comic-container" key="id">
                     <img className="comic-image" src={comicThumbNail} alt={comic.name} />
-                    <h2>{comic.title} - {comic.id}</h2>
-                    <Link to={`/comic/${comic.id}`}><button className="info-btn center" >More Info</button></Link>
-                </div>
             </article>
+        </Link>
 
 
     )

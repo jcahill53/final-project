@@ -86,7 +86,7 @@ function SuperheroDetail() {
             <section>
                 <h2>Comics featuring {heroDetails[0].name}</h2>
 
-                <div className="row" >
+                <div className="row comic-card" >
                     {comics.map((comic, id) =>
                         <SuperheroComic
                             key={id}

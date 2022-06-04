@@ -23,8 +23,8 @@ function App() {
       <>
         <NavBar />
         {/* Hero name input */}
-        <form onSubmit={onFormSubmit}>
-          <label htmlFor="hero-input">Hero:</label>
+        <form className="hero-form"onSubmit={onFormSubmit}>
+          <label htmlFor="hero-input">Enter a Hero:</label>
           <input id="hero-input"></input>
           <button type="submit" className="submit-btn">Search</button>
         </form>
@@ -71,7 +71,7 @@ function App() {
       <>
         <NavBar />
         <div detail-info>
-           <SuperheroComicDetail
+          <SuperheroComicDetail
             id={id}
           />
         </div>
@@ -81,18 +81,21 @@ function App() {
   }
 
   return (
+    
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/hero/:id"
-          element={<SuperHeroDetailPage />}
-        />
-        <Route
-          path="/comic/:id"
-          element={<SuperHeroComicsDetailPage />}
-        />
-      </Routes>
+       
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/hero/:id"
+            element={<SuperHeroDetailPage />}
+          />
+          <Route
+            path="/comic/:id"
+            element={<SuperHeroComicsDetailPage />}
+          />
+        </Routes>
+   
     </div>
   );
 }
