@@ -22,28 +22,21 @@ function App() {
     return (
       <>
         <NavBar />
-        {/* Hero name input */}
-        <form className="hero-form"onSubmit={onFormSubmit}>
-          <label htmlFor="hero-input">Enter a Hero:</label>
-          <input id="hero-input"></input>
-          <button type="submit" className="submit-btn">Search</button>
-        </form>
-        {/* favorite default */}
-        {/* <div className="row">
-                <p>Save as default?</p>
-                <form className='radio'>
-                    <input type="radio" id="favorite" name="fav_hero" value="Yes" />
-                    <label htmlFor="favorite">Yes</label>
-                    <input type="radio" id="notFavorite" name="fav_hero" value="No" checked />
-                    <label htmlFor="notFavorite">Clear default</label>
-                </form>
-            </div> */}
+        <main>
+          {/* Hero name input */}
+          <form className="hero-form" onSubmit={onFormSubmit}>
+            <label htmlFor="hero-input">Enter a Hero:</label>
+            <input id="hero-input" type="text" onfocus="this.value=''" placeholder="Enter at least 1 character" required pattern="[a-zA-Z\-\s]+" minlength="1"
+              title="Enter at least one character. Use only upper case, lower case, a space or hyphens"></input>
+            <button type="submit" className="submit-btn">Search</button>
+          </form>
 
-        <div className="container ">
-          {heroInput && <SuperheroApp
-            heroInput={heroInput}
-          />}
-        </div>
+          <div className="container ">
+            {heroInput && <SuperheroApp
+              heroInput={heroInput}
+            />}
+          </div>
+        </main>
         <Footer />
       </>
     )
@@ -54,12 +47,13 @@ function App() {
     return (
       <>
         <NavBar />
-        <div detail-info>
-
-          <SuperheroDetail
-            id={id}
-          />
-        </div>
+        <main>
+          <div detail-info>
+            <SuperheroDetail
+              id={id}
+            />
+          </div>
+        </main>
         <Footer />
       </>
     );
@@ -70,32 +64,34 @@ function App() {
     return (
       <>
         <NavBar />
+        <main>
         <div detail-info>
           <SuperheroComicDetail
             id={id}
           />
         </div>
+        </main>
         <Footer />
       </>
     );
   }
 
   return (
-    
+
     <div className="App">
-       
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/hero/:id"
-            element={<SuperHeroDetailPage />}
-          />
-          <Route
-            path="/comic/:id"
-            element={<SuperHeroComicsDetailPage />}
-          />
-        </Routes>
-   
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/hero/:id"
+          element={<SuperHeroDetailPage />}
+        />
+        <Route
+          path="/comic/:id"
+          element={<SuperHeroComicsDetailPage />}
+        />
+      </Routes>
+
     </div>
   );
 }

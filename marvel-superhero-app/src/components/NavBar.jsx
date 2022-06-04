@@ -19,7 +19,7 @@ function NavBar() {
                 {/* end of hdr-left */}
                 <section className="hdr-right">
                 <ul className="nav-links">
-                    <li  ><Link to="/">Return to Home</Link></li>
+                    <li  ><Link to="/">Return to Search</Link></li>
                 </ul>
                 </section>
             </nav>

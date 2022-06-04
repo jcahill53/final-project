@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import axios from "axios";
 import SuperheroComic from "./SuperheroComic";
+import pow from '../images/Pow.jpg'
 
 
 function SuperheroDetail() {
@@ -27,7 +28,12 @@ function SuperheroDetail() {
     // comics api
     const comicUrl = `${COMIC_BASE_URL}${charID}&orderBy=${orderBy}&ts=1&apikey=${API_KEY}&hash=${hash}`;
 
-    // use axios to fetch data from multiple urls
+   
+
+
+    useEffect(() => {
+
+         // use axios to fetch data from multiple urls
     const fetchData = () => {
         const getHeroDetail = axios.get(url)
         const getCommics = axios.get(comicUrl)
@@ -53,15 +59,17 @@ function SuperheroDetail() {
         // );
 
     }
-
-
-    useEffect(() => {
         fetchData()
 
-    }, []);
+    }, [comicUrl, url]);
 
     if (isLoading) {
-        return <p>Loading...</p>
+        return (
+            <div className="wait">
+                <p className="load">Loading...</p>
+                <img className="powImage center" src={pow} alt="Marvel Pow icon" />
+            </div>
+        )
     }
 
     if (hasError) {
@@ -77,16 +85,16 @@ function SuperheroDetail() {
     const heroDescr = heroDetails[0].description
 
     return (
-        <>
+        <section>
             <section>
-                <h1 className="detail-hdr">{heroDetails[0].name} - {heroDetails[0].id}</h1>
+                <h1 className="detail-hdr">{heroDetails[0].name}</h1>
                 <img className="center detail-image" src={heroThumbNail} alt={heroDetails[0].name} />
                 <p className="center detail-descr"> {heroDescr}</p>
             </section>
             <section>
                 <h2>Comics featuring {heroDetails[0].name}</h2>
 
-                <div className="row comic-card" >
+                <article className="row comic-card" >
                     {comics.map((comic, id) =>
                         <SuperheroComic
                             key={id}
@@ -95,9 +103,9 @@ function SuperheroDetail() {
                             comicThumbExt={comic.thumbnail.extension}
                         />
                     )}
-                </div>
+                </article>
             </section>
-        </>
+        </section>
     )
 }
 

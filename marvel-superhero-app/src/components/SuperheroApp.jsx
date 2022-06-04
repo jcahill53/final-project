@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import SuperherosCard from './SuperheroCard';
 import PropTypes from 'prop-types'
+import pow from '../images/Pow.jpg'
 
-function SuperheroApp({heroInput}) {
+function SuperheroApp({ heroInput }) {
 
     // use states for hero card
     const [superheros, setSuperheros] = useState([]);
@@ -41,22 +42,25 @@ function SuperheroApp({heroInput}) {
     }, [url]);
 
     if (isLoading) {
-        return <p>Loading...</p>
+        return (
+            <div className="wait">
+                <p className="load">Loading...</p>
+                <img className="powImage center" src ={pow} alt = "Marvel Pow icon"/>
+            </div>
+        )
     }
 
     if (hasError) {
         return <p>An error has occurred.  Please try again.</p>
     }
     const heros = superheros.data.results;
-    console.log(heros);
-
 
     return (
         <>
             {/* superherp cards */}
 
-            <div className="row" >
-            
+            <section className="row" >
+
                 {heros.map((hero, id) =>
                     <SuperherosCard
                         key={id}
@@ -65,7 +69,7 @@ function SuperheroApp({heroInput}) {
                         thumbExt={hero.thumbnail.extension}
                     />
                 )}
-            </div>
+            </section>
 
         </>
     );
