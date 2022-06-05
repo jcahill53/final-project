@@ -12,11 +12,11 @@ function NavBar() {
             </header>
 
             <nav>
-                <section className="hdr-left">
+                <section className="hdr-left ">
                     <img className="logo" src={logo} alt="Marvel logo" />
-                    <h1>Superhero Search</h1>
+                    <h1 className="nav-hdr">Superhero Search</h1>
                 </section>
-                {/* end of hdr-left */}
+                {/* end of hdr-left */} 
                 
                 <section className="hdr-right">
                 <ul className="nav-links">

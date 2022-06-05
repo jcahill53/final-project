@@ -19,7 +19,7 @@ h1 {
   font-size: 3rem;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: #FF5216;
-  padding-top: 1rem;
+  padding-top: 2rem;
   padding-left: 1rem;
 }
 
@@ -105,7 +105,7 @@ header {
   width: 100%;
 }
 
-nav  {
+nav {
   background-color: black;
   color: white;
   height: 100px;
@@ -120,7 +120,7 @@ nav  {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-content: center;
+
 }
 
 .hdr-right {
@@ -132,6 +132,10 @@ nav  {
   height: 100%;
 }
 
+.nav-hdr {
+  padding-top: 0rem;
+}
+
 /* footer formatting */
 footer {
   background-color: black;
@@ -141,8 +145,9 @@ footer {
   width: 100%;
   font-size: 1.5rem;
 }
+
 .footer-container {
-  justify-content:space-between;
+  justify-content: space-between;
   margin-left: 3%;
   margin-right: 3%;
 
@@ -233,7 +238,7 @@ label {
 
 .detail-hero-comics {
   font-size: 2rem;
-  margin-top:4rem;
+  margin-top: 4rem;
   margin-bottom: 1rem;
 }
 
@@ -302,7 +307,7 @@ label {
   margin-bottom: 2%;
 }
 
-.marvel-comic-link {  
+.marvel-comic-link {
   font-size: 1.75rem;
 
 }
