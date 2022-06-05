@@ -41,6 +41,7 @@ function SuperheroApp({ heroInput }) {
 
     }, [url]);
 
+    // during load show Pow image and Loading...
     if (isLoading) {
         return (
             <div className="wait">
@@ -49,16 +50,17 @@ function SuperheroApp({ heroInput }) {
             </div>
         )
     }
-
+    // return message if fetch results in error
     if (hasError) {
         return <p>An error has occurred.  Please try again.</p>
     }
+
+    // use only results from data fetch
     const heros = superheros.data.results;
 
     return (
         <>
             {/* superherp cards */}
-
             <section className="row" >
 
                 {heros.map((hero, id) =>

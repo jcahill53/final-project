@@ -6,13 +6,12 @@
   font-size: 100%;
 }
 
-
 body {
   background-color: lightgray;
 }
 
 main {
-  min-height:calc(100vh - 350px);
+  min-height: calc(100vh - 350px);
 }
 
 
@@ -32,18 +31,13 @@ h2 {
 
 span {
   font-weight: bold;
-
 }
-
 
 a {
   text-decoration: none;
   text-align: center;
   font-weight: bold;
   color: #FF5216;
-  /* margin: 2%; */
-
-
 }
 
 li {
@@ -51,15 +45,13 @@ li {
   margin-top: .5em;
   font-size: 1.2rem;
   list-style-type: none;
-
 }
 
 /* loading format */
 
 .wait {
-margin-top: 5rem;
-margin-bottom: 10rem;
-
+  margin-top: 5rem;
+  margin-bottom: 10rem;
 }
 
 .load {
@@ -141,11 +133,9 @@ footer {
   color: white;
   height: 50px;
   padding: 1%;
-  /* position:absolute; */
-  /* bottom:0; */
-  width:100%;
+  width: 100%;
   font-size: 1.5rem;
-  }
+}
 
 /* hero input */
 label {
@@ -195,7 +185,6 @@ label {
 }
 
 .hero-image {
-  /* max-height: 15rem; */
   width: 100%;
   margin-bottom: 1rem;
 }
@@ -218,7 +207,6 @@ label {
   width: 30%;
   max-height: 40rem;
   margin-bottom: 2rem;
-
 }
 
 .detail-hdr {
@@ -229,17 +217,22 @@ label {
 .detail-descr {
   font-size: 1.5rem;
   margin-bottom: 2rem;
-
 }
 
+.detail-hero-comics {
+  font-size: 1.5rem;
+}
 
+.detail-comic-click {
+  font-size: 1.25rem;
+  text-align: center;
+  font-style: italic;
+}
 
 /* comic formatting */
 .comic-card {
-margin: 2rem;
-min-height: 35rem;
- 
- 
+  margin: 2rem;
+  min-height: 35rem;
 }
 
 .comic-container {
@@ -250,7 +243,7 @@ min-height: 35rem;
   border: .15rem solid black;
   min-height: 26rem;
   background-color: white;
-  }
+}
 
 .comic-image {
   max-height: 25rem;
@@ -261,7 +254,6 @@ min-height: 35rem;
 .comic-detail-container {
   width: 20%;
   margin: 1rem;
-
 }
 
 .comic-detail-card {
@@ -276,7 +268,6 @@ min-height: 35rem;
 }
 
 .comic-detail-image {
-  /* max-height: 40em; */
   margin-bottom: 2%;
 }
 

@@ -17,6 +17,7 @@ function NavBar() {
                     <h1>Superhero Search</h1>
                 </section>
                 {/* end of hdr-left */}
+                
                 <section className="hdr-right">
                 <ul className="nav-links">
                     <li  ><Link to="/">Return to Search</Link></li>

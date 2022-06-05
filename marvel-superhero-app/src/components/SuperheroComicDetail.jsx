@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import {  parseJSON, format } from "date-fns";
+import { parseJSON, format } from "date-fns";
 import pow from '../images/Pow.jpg'
 
 function SuperheroComicDetail() {
     const { id } = useParams();
 
-
+    // use states for data fetch
     const [superHeroComicDetail, setHeroComicDetail] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
-    // const [isValid, setIsValid] = useState(true);
 
     // url variables
     const { REACT_APP_API, REACT_APP_HASH } = process.env
@@ -20,9 +19,9 @@ function SuperheroComicDetail() {
     const hash = REACT_APP_HASH
     const comicID = id;
 
-    // comics api
     const comicUrl = `${COMIC_BASE_URL}${comicID}?&ts=1&apikey=${API_KEY}&hash=${hash}`;
 
+    // fetch comic data
     useEffect(() => {
         fetch(comicUrl)
             .then(response => response.json())
@@ -42,6 +41,7 @@ function SuperheroComicDetail() {
 
     }, [comicUrl]);
 
+    // during load show Pow image and Loading...
     if (isLoading) {
         return (
             <div className="wait">
@@ -50,26 +50,24 @@ function SuperheroComicDetail() {
             </div>
         )
     }
-
+    // return message if fetch results in error
     if (hasError) {
         return <p>An error has occurred.  Please try again.</p>
     }
 
+    //variables used in data return 
+
+    // use only results of data fetch
     const comic = superHeroComicDetail.data.results;
+
+    // variable for comic image
     const comicDetThumbPath = comic[0].thumbnail.path;
     const comicDetThumbExt = comic[0].thumbnail.extension
     const comicDetThumbNail = `${comicDetThumbPath}.${comicDetThumbExt}`
- 
+
+    // format published date
     const pubDate = parseJSON(comic[0].dates[0].date)
     const formattedDate = format(pubDate, "MMMM dd, yyyy");
-    // const pubDate2 = parseJSON('0001-11-30T00:00:00-0500')
-    // const formattedDate2 = format(pubDate2, "MMMM dd, yyyy");
- 
-    console.log(pubDate);
-    console.log(formattedDate);
-    // console.log(pubDate2);
-    // console.log(formattedDate2);
-    
 
     return (
         <>
@@ -87,8 +85,5 @@ function SuperheroComicDetail() {
         </>
     );
 }
-
-
-
 
 export default SuperheroComicDetail

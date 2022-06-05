@@ -3,10 +3,12 @@ import { useParams } from 'react-router-dom';
 import axios from "axios";
 import SuperheroComic from "./SuperheroComic";
 import pow from '../images/Pow.jpg'
- 
+
 
 function SuperheroDetail() {
     const { id } = useParams();
+
+    // use states for data fetch
     const [superHeroDetails, setHeroDetails] = useState([]);
     const [superHeroComics, setHeroComics] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -28,38 +30,36 @@ function SuperheroDetail() {
     // comics api
     const comicUrl = `${COMIC_BASE_URL}${charID}&orderBy=${orderBy}&ts=1&apikey=${API_KEY}&hash=${hash}`;
 
-   
-
-
+    //    fetch data for both hero and comics for the hero
     useEffect(() => {
 
-         // use axios to fetch data from multiple urls
-    const fetchData = () => {
-        const getHeroDetail = axios.get(url)
-        const getCommics = axios.get(comicUrl)
+        // use axios to fetch data from multiple urls
+        const fetchData = () => {
+            const getHeroDetail = axios.get(url)
+            const getCommics = axios.get(comicUrl)
 
-        axios.all([getHeroDetail, getCommics])
-            .then(
-                axios.spread((...allData) => {
-                    const allHeroDetail = allData[0].data
-                    const allComics = allData[1].data
+            axios.all([getHeroDetail, getCommics])
+                .then(
+                    axios.spread((...allData) => {
+                        const allHeroDetail = allData[0].data
+                        const allComics = allData[1].data
 
-                    setHeroDetails(allHeroDetail)
-                    setHeroComics(allComics)
+                        setHeroDetails(allHeroDetail)
+                        setHeroComics(allComics)
+                        setIsLoading(false);
+                    })
+
+                ).catch(err => {
+                    setHasError(true)
                     setIsLoading(false);
-                })
+                });
 
-            ).catch(err => {
-                setHasError(true)
-                setIsLoading(false);
-            });
-
-
-    }
+        }
         fetchData()
 
     }, [comicUrl, url]);
 
+    // during load show Pow image and Loading...
     if (isLoading) {
         return (
             <div className="wait">
@@ -68,17 +68,23 @@ function SuperheroDetail() {
             </div>
         )
     }
-
+    // return message if fetch results in error
     if (hasError) {
         return <p>An error has occurred.  Please try again.</p>
     }
 
     // variables to be used in return
+
+    // use only results from data fetch
     const heroDetails = superHeroDetails.data.results;
     const comics = superHeroComics.data.results;
+
+    // variables for hero image
     const heroThumbPath = heroDetails[0].thumbnail.path;
     const heroThumbExt = heroDetails[0].thumbnail.extension
     const heroThumbNail = `${heroThumbPath}.${heroThumbExt}`
+
+    // variable for hero description
     const heroDescr = heroDetails[0].description
 
 
@@ -90,7 +96,8 @@ function SuperheroDetail() {
                 <p className="center detail-descr"> {heroDescr}</p>
             </section>
             <section>
-                <h2>Comics featuring {heroDetails[0].name}</h2>
+                <h2 className="detail-hero-comics">Comics featuring {heroDetails[0].name}</h2>
+                <p className="detail-comic-click">Click on a comic to learn more</p>
 
                 <article className="row comic-card" >
                     {comics.map((comic, id) =>

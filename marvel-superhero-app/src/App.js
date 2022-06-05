@@ -21,12 +21,11 @@ function App() {
 
     return (
       <>
-        <NavBar />
         <main>
           {/* Hero name input */}
           <form className="hero-form" onSubmit={onFormSubmit}>
             <label htmlFor="hero-input">Enter a Hero:</label>
-            <input id="hero-input" type="text"  placeholder="Enter at least 1 character" required pattern="[a-zA-Z\-\s]+" minLength="1"
+            <input id="hero-input" type="text" placeholder="Enter at least 1 character" required pattern="[a-zA-Z\-\s]+" minLength="1"
               title="Enter at least one character. Use only upper case, lower case, a space or hyphens"></input>
             <button type="submit" className="submit-btn">Search</button>
           </form>
@@ -37,7 +36,6 @@ function App() {
             />}
           </div>
         </main>
-        <Footer />
       </>
     )
   };
@@ -46,7 +44,6 @@ function App() {
     const { id } = useParams();
     return (
       <>
-        <NavBar />
         <main>
           <div >
             <SuperheroDetail
@@ -54,7 +51,6 @@ function App() {
             />
           </div>
         </main>
-        <Footer />
       </>
     );
   }
@@ -63,15 +59,13 @@ function App() {
     const { id } = useParams();
     return (
       <>
-        <NavBar />
         <main>
-        <div >
-          <SuperheroComicDetail
-            id={id}
-          />
-        </div>
+          <div >
+            <SuperheroComicDetail
+              id={id}
+            />
+          </div>
         </main>
-        <Footer />
       </>
     );
   }
@@ -79,6 +73,8 @@ function App() {
   return (
 
     <div className="App">
+
+      <NavBar />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -91,6 +87,8 @@ function App() {
           element={<SuperHeroComicsDetailPage />}
         />
       </Routes>
+
+      <Footer />
 
     </div>
   );
