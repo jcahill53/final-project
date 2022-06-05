@@ -94,6 +94,7 @@ function SuperheroDetail() {
                 <h1 className="detail-hdr">{heroDetails[0].name}</h1>
                 <img className="center detail-image" src={heroThumbNail} alt={heroDetails[0].name} />
                 <p className="center detail-descr"> {heroDescr}</p>
+                <p className="marvel-link"><span></span>Learn more about this hero in the <span></span> <a href={heroDetails[0].urls[1].url} target="_blank" rel="noreferrer">Marvel Universe</a></p>
             </section>
             <section>
                 <h2 className="detail-hero-comics">Comics featuring {heroDetails[0].name}</h2>

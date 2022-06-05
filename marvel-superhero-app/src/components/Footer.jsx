@@ -5,7 +5,10 @@ function Footer() {
     return (
 
         <footer>
-            <p>Data provided by Marvel. © 2014 Marvel</p>
+            <div className="footer-container row">
+                <p>Data provided by Marvel. © 2014 Marvel</p>
+                <p>version: {process.env.REACT_APP_VERSION}</p>
+            </div>
         </footer>
     )
 
