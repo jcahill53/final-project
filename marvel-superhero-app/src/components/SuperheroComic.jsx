@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function SuperheroComic({ comic, comicThumbPath, comicThumbExt }) {
+function SuperheroComic({ comic, comicThumbPath, comicThumbExt}) {
     const comicThumbNail = `${comicThumbPath}.${comicThumbExt}`
 
     return (

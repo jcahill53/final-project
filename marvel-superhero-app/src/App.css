@@ -190,7 +190,7 @@ label {
   padding: 1rem;
   border-radius: 15px;
   border: .15rem solid black;
-  min-height: 35rem;
+  min-height: 32rem;
   background-color: white;
 }
 
@@ -237,7 +237,7 @@ label {
 /* comic formatting */
 .comic-card {
 margin: 2rem;
-min-height: 45rem;
+min-height: 35rem;
  
  
 }
@@ -248,12 +248,12 @@ min-height: 45rem;
   padding: 1rem;
   border-radius: 15px;
   border: .15rem solid black;
-  min-height: 28rem;
+  min-height: 26rem;
   background-color: white;
   }
 
 .comic-image {
-  max-height: 30rem;
+  max-height: 25rem;
   max-width: 15rem;
 }
 

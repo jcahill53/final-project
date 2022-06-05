@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from "axios";
 import SuperheroComic from "./SuperheroComic";
 import pow from '../images/Pow.jpg'
-
+ 
 
 function SuperheroDetail() {
     const { id } = useParams();
@@ -81,6 +81,7 @@ function SuperheroDetail() {
     const heroThumbNail = `${heroThumbPath}.${heroThumbExt}`
     const heroDescr = heroDetails[0].description
 
+
     return (
         <section>
             <section>
@@ -98,6 +99,7 @@ function SuperheroDetail() {
                             comic={comic}
                             comicThumbPath={comic.thumbnail.path}
                             comicThumbExt={comic.thumbnail.extension}
+
                         />
                     )}
                 </article>
