@@ -196,7 +196,7 @@ label {
   padding: 1rem;
   border-radius: 15px;
   border: .15rem solid black;
-  min-height: 32rem;
+  min-height: 30rem;
   background-color: white;
 }
 
@@ -226,8 +226,6 @@ label {
   margin-bottom: 2rem;
 }
 
-.detail-hdr {
-  text-align: center;
   margin-bottom: 2rem;
 }
 
@@ -282,8 +280,8 @@ label {
 }
 
 .comic-detail-card {
-  width: 75%;
-  margin: 2% 10% 10% 10%;
+  width: 90%;
+  margin: 2% 5% 10% 5%;
   padding: 1rem;
 }
 
