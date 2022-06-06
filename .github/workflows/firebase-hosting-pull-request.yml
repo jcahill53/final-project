@@ -3,6 +3,10 @@
 
 name: Deploy to Firebase Hosting on PR
 'on': pull_request
+env:
+  REACT_APP_API: ${{ secrets.REACT_APP_API}}
+  REACT_APP_HASH: ${{ secrets.REACT_APP_HASH}}
+  REACT_APP_VERSION: ${{ secrets.REACT_APP_VERSION}}
 jobs:
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
