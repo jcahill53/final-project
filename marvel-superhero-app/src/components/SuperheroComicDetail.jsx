@@ -78,7 +78,7 @@ function SuperheroComicDetail() {
                     <h3 className="comic-detail-hdr">{comic[0].title}</h3>
                     <p className="comic-detail-descr"><span>Published Date:</span> {formattedDate}</p>
                     <p className="comic-detail-descr">{comic[0].description}</p>
-                    <p className="marvel-comic-link"><span>Learn more about this comic in the </span><a href={comic[0].urls[0].url} target="_blank" rel="noreferrer">Marvel Universe</a></p>
+                    <p className="marvel-comic-link"><span>Learn more about this comic in the </span><a className="marvel-comic-link" href={comic[0].urls[0].url} target="_blank" rel="noreferrer">Marvel Universe</a></p>
                 </div>
 
             </section>

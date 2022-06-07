@@ -15,6 +15,22 @@ main {
 }
 
 
+@media screen and (max-width: 1279px) {
+  main {
+    min-height: calc(100vh - 175px);
+  }
+
+}
+
+
+@media screen and (max-width: 575px) {
+  main {
+    min-height: calc(100vh - 190px);
+  }
+
+}
+
+
 h1 {
   font-size: 3rem;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -22,6 +38,8 @@ h1 {
   padding-top: 2rem;
   padding-left: 1rem;
 }
+
+
 
 h2 {
   text-align: center;
@@ -45,10 +63,16 @@ a:hover {
   color: #03ADE9;
 }
 
+@media screen and (max-width: 575px) {
+  a {
+    font-size: 1rem;
+  }
+}
+
 li {
   text-align: center;
   margin-top: .5em;
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   list-style-type: none;
 }
 
@@ -112,6 +136,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-content: center;
   padding: 1%;
 }
 
@@ -120,6 +145,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-content: center;
 
 }
 
@@ -130,10 +156,67 @@ nav {
   justify-content: center;
   align-content: center;
   height: 100%;
+  margin-right: 1.5rem;
 }
 
 .nav-hdr {
   padding-top: 0rem;
+}
+
+@media screen and (max-width: 1279px) {
+
+  header {
+    height: 100px;
+  }
+
+  nav {
+    height: 75px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+}
+
+@media screen and (max-width: 575px) {
+  header {
+    height: 100px;
+  }
+
+  nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 90px;
+
+  }
+
+  .logo {
+    max-width: 20%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .hdr-left {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+
+  }
+
+  .hdr-right {
+    width: 100%;
+    justify-content: center;
+    align-content: flex-start;
+  }
+
+  li {
+    margin-top: 0em;
+    font-size: 1.25rem;
+  }
+
 }
 
 /* footer formatting */
@@ -150,6 +233,13 @@ footer {
   justify-content: space-between;
   margin-left: 3%;
   margin-right: 3%;
+
+}
+
+@media screen and (max-width: 575px) {
+  footer {
+    font-size: 1rem;
+  }
 
 }
 
@@ -172,6 +262,7 @@ label {
 
 #hero-input {
   margin-right: 2rem;
+  height: 2rem;
 }
 
 .submit-btn {
@@ -182,6 +273,39 @@ label {
   width: 10%;
   height: 2rem;
   border-radius: 15px;
+}
+
+
+@media screen and (max-width: 575px) {
+  label {
+    margin-right: .5rem;
+    font-size: 1.25rem;
+    margin-bottom: .5rem;
+    margin-left: 1rem;
+  }
+
+  .hero-form {
+
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  #hero-input {
+    margin-left: 2rem;
+
+  }
+
+  .submit-btn {
+    padding: 1rem, 3rem;
+    width: 40%;
+    height: 2rem;
+    border-radius: 15px;
+    margin-top: .5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 }
 
 /* hero card formatting */
@@ -219,21 +343,37 @@ label {
   border-radius: 15px;
 }
 
+@media screen and (max-width: 1279px) {
+  .hero-container {
+    width: 30%;
+    margin: 1rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .hero-container {
+    width: 100%;
+    margin: 1rem;
+  }
+}
+
 /* hero detail formatting */
 .detail-image {
-  /* width: 30%; */
-  /* max-height: 40rem; */
+  width: 30%;
+  height: 40%;
   margin-bottom: 2rem;
 }
 
 .detail-hdr {
   text-align: center;
   margin-bottom: 2rem;
+  font-size: 3rem;
 }
 
 .detail-descr {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
+  width: 60%
 }
 
 .detail-hero-comics {
@@ -253,6 +393,33 @@ label {
   text-align: center;
 
 }
+
+
+@media screen and (max-width: 1279px) {
+  .detail-image {
+    width: 40%;
+    height: 40%;
+    margin-bottom: 2rem;
+  }
+
+  .detail-descr {
+    width: 60%;
+  }
+
+}
+
+@media screen and (max-width: 575px) {
+  .detail-image {
+    width: 60%;
+    margin-bottom: 2rem;
+  }
+
+  .detail-descr {
+    width: 80%;
+    font-size: 1.5rem;
+  }
+}
+
 
 /* comic formatting */
 .comic-card {
@@ -275,27 +442,20 @@ label {
   max-width: 15rem;
 }
 
-/* comic detail formatting */
-/* .comic-detail-container {
-  width: 20%;
-  margin: 1rem;
-} */
-
 .comic-detail-card {
-  margin: 2% 5% 10% 5%; 
+  margin: 2% 3% 10% 1%;
   padding: 1rem;
 
 }
 
 .comic-detail-info {
-  width: 35%;
+  width: 65%;
   padding-top: 3%
 }
 
 .comic-detail-image {
   margin-bottom: 2%;
-  width: 50%;
-  height: 40%;
+  width: 30%;
 
 }
 
@@ -312,5 +472,53 @@ label {
 
 .marvel-comic-link {
   font-size: 1.75rem;
+
+}
+
+@media screen and (max-width: 1279px) {
+
+  .comic-detail-info {
+    width: 50%;
+    padding-top: 3%
+  }
+
+  .comic-detail-image {
+    margin-bottom: 2%;
+    width: 40%;
+
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .comic-detail-card {
+    flex-direction: column;
+    margin: 2% 4% 10% 4%;
+    padding: 1rem;
+
+  }
+
+  .comic-detail-info {
+    width: 95%;
+    padding-top: 3%;
+
+  }
+
+  .comic-detail-image {
+    margin-bottom: 2%;
+    width: 95%;
+
+  }
+
+  .comic-detail-descr {
+    font-size: 1.75rem;
+  }
+
+  .comic-detail-descr {
+    font-size: 1.75rem;
+  }
+
+  .marvel-comic-link {
+    font-size: 1.75rem;
+  }
 
 }
